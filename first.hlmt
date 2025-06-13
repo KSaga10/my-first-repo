@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WinWithK – Gaming & Giveaways</title>
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    let isLoggedIn = false;
+
+    function showConfirmation() {
+      document.getElementById('payment-confirm').style.display = 'block';
+      alert("✅ Payment has been successfully confirmed. Thank you for joining!");
+    }
+
+    function loginUser() {
+      const username = document.getElementById('login-user').value.trim();
+      const password = document.getElementById('login-pass').value.trim();
+      if (username && password) {
+        isLoggedIn = true;
+        alert("🔓 Login successful. Welcome, " + username + "!");
+      } else {
+        alert("❌ Please enter both username and password.");
+      }
+    }
+
+    window.onload = function() {
+      emailjs.init("05jVjAhidP95GyMEY");
+    }
+  </script>
+  <style>
+    :root {
+      --primary: #00d9ff;
+      --background: #0f0f0f;
+      --card: #1f1f1f;
+      --text: #fff;
+      --accent: #00bcd4;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+    header {
+      background: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      color: var(--primary);
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #121212, #1a1a1a);
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,217,255,0.1);
+    }
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    button {
+      background: var(--primary);
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: var(--accent);
+      transform: scale(1.05);
+    }
+    .confirmation {
+      margin-top: 1rem;
+      background-color: #004d40;
+      color: #80ffea;
+      padding: 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      display: none;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      margin-top: 1rem;
+      width: 100%;
+      background: #333;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1e1e1e;
+      color: #aaa;
+    }
+    .social-links a {
+      color: var(--primary);
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .social-links a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 WinWithK</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#streams">Streams</a>
+      <a href="#giveaway">Giveaways</a>
+      <a href="#membership">Membership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to WinWithK</h2>
+    <p>Join thousands of gamers in an epic journey of live gaming, streaming, and exclusive giveaways. Stay tuned and stay rewarded!</p>
+  </section>
+
+  <section id="about" class="card">
+    <h3>About Us</h3>
+    <p>WinWithK is your go-to destination for thrilling live streams, exclusive game content, and weekly gaming giveaways. Whether you're a casual player or a pro, we've got something for everyone.</p>
+  </section>
+
+  <section id="streams" class="card">
+    <h3>Live Streams</h3>
+    <p>Catch our streams live on YouTube, where we dive into battle royales, indie games, and community events. Don’t forget to subscribe to <strong><a href="https://youtube.com/@ks1022-p7y?si=LvUItcHVS9kFDoGZ" target="_blank">K's Gaming Saga</a></strong>!</p>
+  </section>
+
+  <section id="giveaway" class="card">
+    <h3>Giveaways</h3>
+    <p>🎁 Enter our weekly giveaways and win gaming credits, loot boxes, and exclusive merch. All you need is an active membership.</p>
+    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd4IRSYl3NBTf-2Ca9eEzVQHSulSfg6ZyjO_T5duDf2b-j6tg/viewform', '_blank')">Enter Giveaway</button>
+  </section>
+
+  <section id="membership" class="card">
+    <h3>Become a Member</h3>
+    <p>Activate your membership for ₹50/week to unlock premium perks and giveaways.</p>
+    <ul>
+      <li>✅ Access to weekly giveaways</li>
+      <li>✅ VIP Discord role</li>
+      <li>✅ Early access to streams</li>
+    </ul>
+    <br>
+    <p><strong>UPI ID:</strong> roysaga@fam</p>
+    <button onclick="showConfirmation()">I've Paid</button>
+    <div id="payment-confirm" class="confirmation">✅ Payment confirmed! Your membership is now active.</div>
+  </section>
+
+  <section id="login" class="card">
+    <h3>Login</h3>
+    <input type="text" id="login-user" placeholder="Username">
+    <input type="password" id="login-pass" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+  </section>
+
+  <section id="contact" class="card">
+    <h3>Contact</h3>
+    <p>Email us: <strong>ksgamingsaga@gmail.com</strong></p>
+    <p>Business inquiries only. For support, join our Discord community.</p>
+    <div class="social-links">
+      <a href="https://youtube.com/@ks1022-p7y?si=LvUItcHVS9kFDoGZ" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com/kssagahub/" target="_blank">Instagram</a> |
+      <a href="https://discord.gg/PDGDpMzv7V" target="_blank">Discord</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 K's Gaming Saga. All rights reserved. | WinWithK | BY KARAN ROY | Built with passion for the gaming community.</p>
+    <br />
+    <p>Policy Notice<br />
+    By using this website, you agree to our terms of service and privacy policy. All memberships are non-refundable as they provide immediate access to digital content. Active paid membership required for giveaway participation. We protect your data and don't share personal information with third parties.</p>
+  </footer>
+</body>
+</html>
